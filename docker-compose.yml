@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  polysync:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: polysync-cpu
+    volumes:
+      - ./input:/workspace/input
+      - ./output:/workspace/output
+      - ./scripts:/workspace/scripts
+    stdin_open: true
+    tty: true
